@@ -114,7 +114,7 @@ mean_std_withActivityLabels_DF <- select(mean_std_withActivityLabels_DF, -Activi
 # the names any further.
 ```
 
-### 10: Make a new tidy dataset with means of each measurement and write it to an output text file
+### 10: Make a new tidy dataset with the average of each variable for each activity and each subject and write it to an output text file
 ```{r, cache=TRUE, collapse = TRUE, warning=FALSE, message = FALSE, echo=TRUE, results='markup'}
 # Make the tidy data set with the mean of each variable for each activity and each subject
 tidyDataSet <- aggregate(. ~ActivityName + SubjectId, mean_std_withActivityLabels_DF, mean)
