@@ -5,14 +5,14 @@ date: "June 17, 2017"
 output: html_document
 ---
 
-# Code Book for Getting and Cleaning Data Course Project
+# Code Book for Getting and Cleaning Data Course Assignment
 
 
-## Description
+## 1: Description
 This code book describes the variables, the data, and any transformations or work that were performed to clean up the data for Coursera's Johns Hopkins Getting and Cleaning Data course Peer Graded Assignment. It includes the descriptions of both the input dataset as well as the final tidy dataset.
 
 
-## Input Data Set Details
+## 2: Input Data Set Details
 One of the most exciting areas in all of data science right now is wearable computing - see for example this article . Companies like Fitbit, Nike, and Jawbone Up are racing to develop the most advanced algorithms to attract new users. The data linked to from the course website represent data collected from the accelerometers from the Samsung Galaxy S smartphone. A full description is available at the site where the data was obtained:
 http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
 
@@ -20,7 +20,7 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
-### Attribute Information
+### 2.1: Attribute Information
 For each record in the dataset it is provided: 
 - Triaxial acceleration from the accelerometer (total acceleration) and the estimated body acceleration. 
 - Triaxial Angular velocity from the gyroscope. 
@@ -29,7 +29,6 @@ For each record in the dataset it is provided:
 - An identifier of the subject who carried out the experiment.
 
 The dataset includes the following files:
-=========================================
 
 - 'README.txt'
 
@@ -58,12 +57,11 @@ The following files are available for the train and test data. Their description
 - 'train/Inertial Signals/body_gyro_x_train.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second. 
 
 Notes: 
-======
 - Features are normalized and bounded within [-1,1].
 - Each feature vector is a row on the text file.
 
 
-### Features Selection (features_info.txt)
+### 2.2: Features Selection (features_info.txt)
 The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
 
 Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
@@ -682,7 +680,7 @@ The full list of variables of each feature vector (as described in features.txt)
 - angle(Y,gravityMean)
 - angle(Z,gravityMean)
 
-### Class labels with their activity names (activity_labels.txt)
+### 2.3: Class labels with their activity names (activity_labels.txt)
 - 1 WALKING
 - 2 WALKING_UPSTAIRS
 - 3 WALKING_DOWNSTAIRS
@@ -691,18 +689,18 @@ The full list of variables of each feature vector (as described in features.txt)
 - 6 LAYING
 
 
-## Tranformations Performed on the input data set to produce the tidy data set
+## 3: Tranformations Performed on the input data set to produce the tidy data set
 The R Script run_analysis.R processes the input data to produce the tidy data set. The details of the transformations done are provided in the README.md file.
 
 
-## Output Tidy Data set
+## 4: Output Tidy Data set
 The output tidy dataset consists of the following:
 
-### Identifiers
+### 4.1: Identifiers
 - ActivityName: Descriptive activity name performed when the corresponding measurements were taken.
 - SubjectId: ID of the subject (Person) for whom the measurements were taken, ranging from 1 to 30.
 
-### Measurements
+### 4.2: Measurements
 The measurements consist of the average of each of the following variable for each activity and each subject:
 
 - tBodyAcc-mean()-X
